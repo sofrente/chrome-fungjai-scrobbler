@@ -1,18 +1,18 @@
 {
-  "name": "SoundCloud Scrobbler",
-  "description": "Chrome Extension that submits to Last.fm (scrobble) music you play on SoundCloud",
+  "name": "Fungjai Scrobbler",
+  "description": "Chrome Extension that submits to Last.fm (scrobble) music you play on Fungjai",
   "version": "1.2",
   "permissions": [
     "tabs",
     "storage",
-    "https://soundcloud.com/"
+    "https://www.fungjai.com/"
   ],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
   "content_scripts": [ {
-    "matches": [ "https://soundcloud.com/*" ],
+    "matches": [ "https://www.fungjai.com/*" ],
     "css": [ "style/style.css" ],
     "js": [
       "library/jquery.min.js",

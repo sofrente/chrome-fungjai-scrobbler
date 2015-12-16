@@ -96,7 +96,7 @@ scrobbler.tick = function() {
 						sk: localStorage['scrobbler-key']
 					},
 					function () {
-						console.log('Chrome SoundCloud Scrobbler. ' + scrobbler.track + ' by ' + scrobbler.artist + ' was submitted to Last.fm for ' + localStorage['scrobbler-name'] + '.');
+						console.log('Chrome Fungjai Scrobbler. ' + scrobbler.track + ' by ' + scrobbler.artist + ' was submitted to Last.fm for ' + localStorage['scrobbler-name'] + '.');
 					}
 				);
 			}

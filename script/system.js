@@ -4,8 +4,8 @@
 
 var scrobbler = {
 
-	key: '999941637ac7d69b1eb671ce8cdfe447',
-	secret: '06bfde10a535f5a9ad875d7ae150f44a',
+	key: 'c312b7e4ea0b9e79f3066401fedb972c',
+	secret: 'd5e83575f666ac06111bf71e92fda7ad',
 
 	_cachedTemplates: [],
 
