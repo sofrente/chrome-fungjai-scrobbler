@@ -45,7 +45,6 @@ scrobbler.tick = function() {
 			scrobbler.track = scrobbler.track.replace(/(\(|\[)?(free download)(\)|\])?/i, '');
 		}
 
-
 		// Compare track info with previous tick to check is it was changed
 		scrobbler.trackChanged = scrobbler.track !== scrobbler.prevTrack || scrobbler.artist !== scrobbler.prevArtist;
 
