@@ -18,15 +18,13 @@ scrobbler.renderTemplate(
 scrobbler.tick = function() {
 
 	// Get playing state
-	scrobbler.isPlaying = $('.playControls__playPauseSkip .playControl').hasClass('playing');
+	// scrobbler.isPlaying = $('.playControls__playPauseSkip .playControl').hasClass('playing');
+	scrobbler.isPlaying = $('.jp-audio').hasClass('jp-state-playing');
 
 	if (scrobbler.isPlaying) {
 
-		// Get basic track info
-		var title = $('title').text(),
-			parts = title.split(/ by /);
-		scrobbler.track = parts.shift().trim();
-		scrobbler.artist = parts.join(' by ').trim();
+		scrobbler.track = $('.controller-track-name a').text();
+		scrobbler.artist = $('.controller-track-artist a').text();
 
 		// Is it playlist?
 		if (scrobbler.artist.length === 0 && scrobbler.track.match(' in ')) {
@@ -47,9 +45,6 @@ scrobbler.tick = function() {
 			scrobbler.track = scrobbler.track.replace(/(\(|\[)?(free download)(\)|\])?/i, '');
 		}
 
-		// Clean track info
-		scrobbler.artist = scrobbler.artist.replace(/^[^\[a-z\d]*|[^a-z\d\)]*$/gi, '');
-		scrobbler.track = scrobbler.track.replace(/^[^\[a-z\d]*|[^a-z\d\)]*$/gi, '');
 
 		// Compare track info with previous tick to check is it was changed
 		scrobbler.trackChanged = scrobbler.track !== scrobbler.prevTrack || scrobbler.artist !== scrobbler.prevArtist;
